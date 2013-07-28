@@ -5,7 +5,7 @@ using System.Threading;
 public class StartClient : MonoBehaviour {
 	
 	Client client = null;
-
+	
 	// Use this for initialization
 	void Start () {
 		Debug.Log("Starting StartClient");
@@ -16,6 +16,10 @@ public class StartClient : MonoBehaviour {
 		Debug.Log("Thread Started");
 	}
 	
+	public string foo() {
+		client = new Client();
+		return client.message;	
+	}
 	void StartTheClient(){
 		Debug.Log("Starting Client");
 	    client = new Client();
@@ -31,10 +35,10 @@ public class StartClient : MonoBehaviour {
 		}
 	}
 	
-	void OnGUI () {
+	/*void OnGUI () {
 		// Make a background box
 		GUI.Box(new Rect(10,10,300,100), client.message);
 
-	}
+	}*/
 	
 }
