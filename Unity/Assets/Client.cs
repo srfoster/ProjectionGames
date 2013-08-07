@@ -26,7 +26,7 @@ public class Client {
  
     		Int32 port = 2013;
 			
-    		client = new TcpClient("localhost", port);
+    		client = new TcpClient("127.0.0.1", port);
 
       		stream = client.GetStream();
 			StreamReader input = new StreamReader(stream);
