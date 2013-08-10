@@ -7,13 +7,8 @@ using System.IO;
 
 public class Client {
 	
-	public string message = "";
+	public string message = "I'm not changing";
 	public string error = "";
-	
-	public Client() 
-	{
-
-	}
 	
 	
 	public void Start(){
@@ -23,7 +18,7 @@ public class Client {
 			
   		try 
   		{
- 
+            message = "I'm thinking about changing for you";
     		Int32 port = 2013;
 			
     		client = new TcpClient("127.0.0.1", port);
@@ -32,15 +27,15 @@ public class Client {
 			StreamReader input = new StreamReader(stream);
 
    			Byte[] data = new Byte[23];
-
 		    // String to store the response ASCII representation.
 		    String responseData = String.Empty;
-			
+
 			while(true){
-				
 				try{
-				    message = input.ReadLine();
+				    message = input.Read() + " for you I changed" + Environment.NewLine;
+					
 				}catch(Exception e){
+					message = "I lied. I'm a jerk!";
 					error = e.Message;	
 				}
 			}
