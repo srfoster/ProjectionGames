@@ -16,10 +16,10 @@ public class StartClient : MonoBehaviour {
 		Debug.Log("Thread Started");
 	}
 	
-	/*public string foo() {
-		client = new Client();
+	public string foo() {
 		return client.message;	
-	}*/
+	}
+	
 	void StartTheClient(){
 		Debug.Log("Starting Client");
 	    client = new Client();

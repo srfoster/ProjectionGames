@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
              if (n < 0)
                  break;
             bzero(buffer,256);
-            n = read(newsockfd,buffer,255);
+            //n = read(newsockfd,buffer,255);
          //   if (n < 0)
            //      error("ERROR reading from socket");
            // printf("%s\n",buffer);

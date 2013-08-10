@@ -7,7 +7,7 @@ using System.IO;
 
 public class Client {
 	
-	public string message = "I'm not changing";
+	public string message = "";
 	public string error = "";
 	
 	
@@ -18,7 +18,6 @@ public class Client {
 			
   		try 
   		{
-            message = "I'm thinking about changing for you";
     		Int32 port = 2013;
 			
     		client = new TcpClient("127.0.0.1", port);
@@ -32,10 +31,9 @@ public class Client {
 
 			while(true){
 				try{
-				    message = input.Read() + " for you I changed" + Environment.NewLine;
+				    message = input.Read() + "something";
 					
 				}catch(Exception e){
-					message = "I lied. I'm a jerk!";
 					error = e.Message;	
 				}
 			}
