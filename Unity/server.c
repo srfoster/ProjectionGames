@@ -68,11 +68,11 @@ int main(int argc, char *argv[])
             int temp = rand() % 100 + 1;
             double r = 1000.000001;
             double k = 1000.000002;
-            printf(" %f %f \n", r, k);
+            printf(" %f %f\n", r, k);
             bzero(buffer,256);
             fgets(buffer,255,stdin);
             char str[24];
-            sprintf(str, "%f %f \n", r, k);
+            sprintf(str, "%f %f\n", r, k);
             strcpy(buffer, str);
 
 	    n = write(newsockfd,buffer,strlen(buffer));
