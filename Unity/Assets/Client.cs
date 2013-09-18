@@ -7,7 +7,7 @@ using System.IO;
 
 public class Client {
 	
-	public string message = "";
+	public string message = "here";
 	public string error = "";
 	
 	
@@ -19,22 +19,25 @@ public class Client {
   		try 
   		{
     		Int32 port = 2013;
-			
+			message = "in 1st try";
     		client = new TcpClient("127.0.0.1", port);
 
       		stream = client.GetStream();
 			StreamReader input = new StreamReader(stream);
 
-   			Byte[] data = new Byte[23];
+   			Byte[] data = new Byte[24];
 		    // String to store the response ASCII representation.
 		    String responseData = String.Empty;
 
 			while(true){
 				try{
-				    message = input.Read() + "something";
+					message = "above read line";
+				    message = input.ReadLine();
+					message = "below read line";
 					
 				}catch(Exception e){
 					error = e.Message;	
+					message = "error";
 				}
 			}
 	  } 

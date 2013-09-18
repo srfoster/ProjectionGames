@@ -65,12 +65,14 @@ int main(int argc, char *argv[])
 
          while(1)
          {
-            int r= rand() % 100 + 1 ;
-            printf(" %i \n", r);
+            int temp = rand() % 100 + 1;
+            double r = 1000.000001;
+            double k = 1000.000002;
+            printf(" %f %f \n", r, k);
             bzero(buffer,256);
-            // fgets(buffer,255,stdin);
-            char str[3];
-            sprintf(str, "%d", r);
+            fgets(buffer,255,stdin);
+            char str[24];
+            sprintf(str, "%f %f \n", r, k);
             strcpy(buffer, str);
 
 	    n = write(newsockfd,buffer,strlen(buffer));
@@ -78,10 +80,10 @@ int main(int argc, char *argv[])
              if (n < 0)
                  break;
             bzero(buffer,256);
-            //n = read(newsockfd,buffer,255);
-         //   if (n < 0)
-           //      error("ERROR reading from socket");
-           // printf("%s\n",buffer);
+            n = read(newsockfd,buffer,255);
+           if (n < 0)
+        error("ERROR reading from socket");
+        printf("%s\n",buffer);
 
         }
     }
